@@ -1,6 +1,12 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" type="text/css" href="public/css/register.css">
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
+
+<body>
+    
 
         <!-- Name -->
         <div>
@@ -47,6 +53,9 @@
             <x-primary-button class="ml-4">
                 {{ __('Register') }}
             </x-primary-button>
-        </div>
+</div>
+       
     </form>
 </x-guest-layout>
+</body>
+</html>
