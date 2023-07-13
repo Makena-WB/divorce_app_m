@@ -21,8 +21,9 @@ use App\Http\Controllers\ClientController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('client', function () {
-    return view('client.index');
+
+Route::get('/client/home', function () {
+    return view('client.home');
 });
 
 
