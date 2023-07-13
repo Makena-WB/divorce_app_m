@@ -22,6 +22,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/client/home', function () {
+    return view('client.home');
+});
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -52,6 +58,7 @@ Route::controller(ClientController::class)->prefix('client')->group(function (){
     Route::put('edit/{id}','update')->name('client.update');
     Route::delete('destroy/{id}','destroy')->name('client.destroy');
 });
+
 
 
 require __DIR__.'/auth.php';
