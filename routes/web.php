@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawyerController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\PageController;
 
 
 
@@ -26,11 +27,16 @@ Route::get('/client/home', function () {
     return view('client.home');
 });
 
-
+ Route::get('/client/indexx', function () {
+     return view('client.indexx');
+ });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/', [PageController::class, 'indexx']);
+Route::post('/uploadFile', [PageController::class, 'uploadFile'])->name('uploadFile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
