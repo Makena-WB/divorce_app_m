@@ -35,7 +35,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', [PageController::class, 'indexx']);
+Route::get('/', [PageController::class, 'index']);
 Route::post('/uploadFile', [PageController::class, 'uploadFile'])->name('uploadFile');
 
 Route::middleware('auth')->group(function () {
