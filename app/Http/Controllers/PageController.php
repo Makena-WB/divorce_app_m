@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('upload');
+        return view('indexx');
     }
 
     public function uploadFile(Request $request){
